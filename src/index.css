@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Inter:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Newsreader", serif;
+  --font-headline: "Newsreader", serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --color-background: #0c0f0f;
+  --color-on-surface: #e2e2e2;
+  --color-surface-container: #151818;
+  --color-primary: #f87171;
+  --color-cokreate-red: #dc2626;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body selection:bg-cokreate-red/30 selection:text-white;
+  }
+}
+
+@layer utilities {
+  .film-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuD1nPYagQ8tDPKv8Lwg5YJcPlySfjqFy5RG_QFm_O4CWbiJ15MuC5JwqV30GOgbliIeecx7vStj2AmJPuRB0unM4uodgSvTATJ47HjPRcmI_7MsPNhdMvBxd_Arq-aMp5ynuH4qPNYmNk3teyoW5IqScMeG-dd4bdyC6oTJW-YMJ-gO1XLJZtgyCEa0LXSww0DWOOsaRqbkK_RdBgvsYp5jM0hL2UfUUPqiO4m6LQPE64FuftNVQZBFHe-QJ8r6u0kZqiYSwyxrj3g);
+    opacity: 0.02;
+    pointer-events: none;
+  }
+  .hero-glow {
+    background: radial-gradient(circle at top right, rgba(220, 38, 38, 0.08) 0%, rgba(0, 0, 0, 0) 60%);
+  }
+  .spotlight-card:hover {
+    background: radial-gradient(circle at top left, rgba(220, 38, 38, 0.05), transparent 70%);
+  }
+}
+
