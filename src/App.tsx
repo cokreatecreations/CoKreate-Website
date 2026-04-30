@@ -183,7 +183,7 @@ const FeaturedSection = () => {
             />
             <div className="absolute bottom-8 left-8 z-20 pointer-events-none">
               <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-white/40 mb-1">Featured Project</p>
-              <h3 className="text-2xl font-display italic text-white">The Noir Collection</h3>
+              <h3 className="text-2xl font-display italic text-white">Faces</h3>
             </div>
             
             {/* Decorative corners */}
