@@ -436,10 +436,10 @@ const Contact = () => {
 const Portfolio = () => {
 
   const photography = [
-    { title: "Noir Editorial", category: "Fashion", url: "/regenerated_image_1777580731945.png" },
-    { title: "Urban Essence", category: "Portrait", url: "/regenerated_image_1777580732400.png" },
-    { title: "Quiet Strength", category: "Portrait", url: "/regenerated_image_1777580732988.png" },
-    { title: "Architectural Lines", category: "Editorial", url: "/regenerated_image_1777580733484.png" },
+    { title: "Brooklyn", category: "Portrait", url: "/regenerated_image_1777580731945.png" },
+    { title: "Rylie", category: "Portrait", url: "/regenerated_image_1777580732400.png" },
+    { title: "Elizabeth", category: "Portrait", url: "/regenerated_image_1777580732988.png" },
+    { title: "Sydney", category: "Portrait", url: "/regenerated_image_1777580733484.png" },
   ];
 
   const testimonials = [
