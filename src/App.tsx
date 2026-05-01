@@ -177,7 +177,7 @@ const FeaturedSection = () => {
             <div className="absolute inset-0 opacity-40 mix-blend-overlay bg-[radial-gradient(circle_at_50%_50%,_#dc2626_0%,_transparent_100%)] z-10 pointer-events-none"></div>
             <img 
               alt="Editorial fashion" 
-              className="w-full h-full object-cover grayscale brightness-75 group-hover:scale-105 transition-transform duration-1000" 
+              className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" 
               src="/regenerated_image_1777580601972.png"
               referrerPolicy="no-referrer"
             />
@@ -511,7 +511,7 @@ const Portfolio = () => {
             >
               <img 
                 src={item.url} 
-                className="w-full h-full object-cover grayscale brightness-75 transition-transform duration-700 group-hover:scale-110 group-hover:grayscale-0"
+                className="w-full h-full object-cover grayscale brightness-75 transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
                 alt={item.title}
                 referrerPolicy="no-referrer"
               />
