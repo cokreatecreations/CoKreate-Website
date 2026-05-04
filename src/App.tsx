@@ -279,8 +279,21 @@ const Contact = () => {
       if (response.ok) {
         setStatus('success');
       } else {
-        const errorData = await response.json();
-        throw new Error(errorData.message || 'Something went wrong');
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          let message = `Server error: ${response.status}`;
+          try {
+            const errorData = await response.json();
+            message = errorData.message || errorData.error || message;
+          } catch (parseErr) {
+            console.error('Failed to parse error JSON:', parseErr);
+          }
+          throw new Error(message);
+        } else {
+          const errorText = await response.text();
+          console.error('Server error response (text):', errorText);
+          throw new Error(`Server error: ${response.status}`);
+        }
       }
     } catch (err) {
       setStatus('error');
@@ -338,7 +351,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="flex flex-col gap-2">
               <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Email</span>
-              <a href="mailto:cokreatemedia@gmail.com" className="text-white hover:text-cokreate-red transition-colors text-lg font-light">cokreatemedia@gmail.com</a>
+              <a href="mailto:vision@cokreatemedia.com" className="text-white hover:text-cokreate-red transition-colors text-lg font-light">vision@cokreatemedia.com</a>
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-[10px] font-bold uppercase tracking-widest text-white/30">Location</span>
@@ -718,7 +731,7 @@ const Footer = ({ setCurrentPage }: { setCurrentPage: (page: string) => void }) 
           <div className="flex flex-col gap-4">
             <h5 className="text-[10px] font-bold uppercase tracking-widest text-white/40">Connect</h5>
             <div className="flex flex-col gap-2 text-xs uppercase tracking-widest text-white/60">
-              <a className="hover:text-cokreate-red transition-colors" href="#">Mail</a>
+              <a className="hover:text-cokreate-red transition-colors" href="mailto:vision@cokreatemedia.com">Mail</a>
               <a className="hover:text-cokreate-red transition-colors" href="#">Client Portal</a>
             </div>
           </div>
